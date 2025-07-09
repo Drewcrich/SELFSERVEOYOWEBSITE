@@ -5,6 +5,7 @@ import './App.css';
 // Components
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
+import CustomChatbot from './components/CustomChatbot';
 import HomePage from './pages/HomePage';
 import BookTourPage from './pages/BookTourPage';
 import RentManagerGuide from './pages/RentManagerGuide';
@@ -25,6 +26,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
+        <CustomChatbot />
       </div>
     </Router>
   );
