@@ -2,29 +2,29 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
-// Layout components
+// Components
 import Header from './components/Header';
-import Footer from './components/Footer';
-
-// Pages
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import BookTourPage from './pages/BookTourPage';
-import TourConfirmationPage from './pages/TourConfirmationPage';
+import RentManagerGuide from './pages/RentManagerGuide';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
+      <div className="min-h-screen">
         <Header />
-        <main className="flex-grow">
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/book-tour" element={<BookTourPage />} />
-            <Route path="/tour-confirmation" element={<TourConfirmationPage />} />
+            <Route path="/rental-setup" element={<RentManagerGuide />} />
+            <Route path="/confirmation" element={<ConfirmationPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </Router>
   );

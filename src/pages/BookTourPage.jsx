@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-import { CheckCircle, Clock, MessageSquare, MapPin, Phone, Mail, Calendar } from 'lucide-react';
+import { Phone, Zap, Calendar, MessageSquare, Home } from 'lucide-react';
+import HorizontalTimeline from '../components/HorizontalTimeline';
+import ProcessFlowchart from '../components/ProcessFlowchart';
+import FAQSection from '../components/FAQSection';
 
 const BookTourPage = () => {
   const navigate = useNavigate();
@@ -70,14 +73,8 @@ Take your time exploring!`
       // Send actual email via EmailJS
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
-      // Navigate to confirmation page with customer data
-      navigate('/tour-confirmation', {
-        state: {
-          customerName: formData.fullName,
-          customerEmail: formData.email,
-          customerPhone: formData.phone
-        }
-      });
+      // Redirect to confirmation page
+      navigate('/confirmation');
 
     } catch (error) {
       console.error('Error sending email:', error);
@@ -88,476 +85,279 @@ Take your time exploring!`
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%)' }}>
-      {/* Hero Section */}
-      <section className="hero-section" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
-        <div className="container">
-          <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h1 className="hero-title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-              📋 Book Your Self-Service Tour
-            </h1>
-            <p className="hero-subtitle" style={{ fontSize: '1.1rem', color: 'var(--text-gray)', marginBottom: '2rem' }}>
-              Quick form • Instant confirmation • Tour in minutes
-            </p>
+    <div className="booking-container">
+      {/* Header */}
+      <div className="booking-header">
+        <h1 className="booking-title">
+          📋 Book Your Self-Service Tour
+        </h1>
+        <p className="booking-subtitle">
+          Quick form • Instant confirmation • Tour in minutes
+        </p>
+      </div>
+
+      {/* Process Steps */}
+      <div className="process-steps">
+        <div className="process-card">
+          <div className="process-number green">1</div>
+          <h3 className="process-title">Fill Form</h3>
+          <p className="process-description">1-minute booking form</p>
+        </div>
+        
+        <div className="process-card">
+          <div className="process-number blue">2</div>
+          <h3 className="process-title">Get Details</h3>
+          <p className="process-description">Text with location, number & access code</p>
+        </div>
+        
+        <div className="process-card">
+          <div className="process-number purple">3</div>
+          <h3 className="process-title">Tour & Rent</h3>
+          <p className="process-description">Self-guided tour</p>
+        </div>
+      </div>
+
+      {/* Booking Form */}
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          
+          {/* Personal Information */}
+          <div className="form-section">
+            <h3 className="section-title">
+              <Phone size={24} style={{ color: '#22c55e' }} />
+              Your Information
+            </h3>
             
-            {/* Process Steps */}
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-              gap: '1.5rem',
-              marginBottom: '3rem',
-              maxWidth: '800px',
-              margin: '0 auto 3rem auto'
-            }}>
-              <div style={{ 
-                background: 'white', 
-                padding: '1.5rem', 
-                borderRadius: '1rem', 
-                boxShadow: 'var(--card-shadow)',
-                textAlign: 'center'
-              }}>
-                <div style={{ 
-                  background: 'var(--primary-green)', 
-                  color: 'white', 
-                  width: '3rem', 
-                  height: '3rem', 
-                  borderRadius: '50%', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  margin: '0 auto 1rem auto',
-                  fontSize: '1.2rem',
-                  fontWeight: '700'
-                }}>
-                  1
-                </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.5rem' }}>Fill Form</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>1-minute booking form</p>
+            <div className="form-grid">
+              {/* Full Name */}
+              <div className="form-field">
+                <label className="form-label">
+                  🏷️ Full Name *
+                </label>
+                <input
+                  type="text"
+                  name="fullName"
+                  required
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="form-input"
+                  placeholder="Enter your full name"
+                />
               </div>
-              
-              <div style={{ 
-                background: 'white', 
-                padding: '1.5rem', 
-                borderRadius: '1rem', 
-                boxShadow: 'var(--card-shadow)',
-                textAlign: 'center'
-              }}>
-                <div style={{ 
-                  background: 'var(--secondary-blue)', 
-                  color: 'white', 
-                  width: '3rem', 
-                  height: '3rem', 
-                  borderRadius: '50%', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  margin: '0 auto 1rem auto',
-                  fontSize: '1.2rem',
-                  fontWeight: '700'
-                }}>
-                  2
-                </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.5rem' }}>Get Details</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>Text with location, number & access code</p>
+
+              {/* Phone Number */}
+              <div className="form-field">
+                <label className="form-label">
+                  📱 Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="form-input"
+                  placeholder="(555) 123-4567"
+                />
               </div>
-              
-              <div style={{ 
-                background: 'white', 
-                padding: '1.5rem', 
-                borderRadius: '1rem', 
-                boxShadow: 'var(--card-shadow)',
-                textAlign: 'center'
-              }}>
-                <div style={{ 
-                  background: 'var(--accent-purple)', 
-                  color: 'white', 
-                  width: '3rem', 
-                  height: '3rem', 
-                  borderRadius: '50%', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  margin: '0 auto 1rem auto',
-                  fontSize: '1.2rem',
-                  fontWeight: '700'
-                }}>
-                  3
-                </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.5rem' }}>Tour & Rent</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>Self-guided tour</p>
-              </div>
+            </div>
+
+            {/* Email */}
+            <div className="form-field" style={{ marginTop: '1.5rem' }}>
+              <label className="form-label">
+                📧 Email Address *
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleInputChange}
+                className="form-input"
+                placeholder="your.email@example.com"
+              />
             </div>
           </div>
 
-          {/* Main Form Container */}
-          <div style={{ 
-            maxWidth: '800px', 
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: '1fr',
-            gap: '2rem'
-          }}>
+          {/* Tour Timing */}
+          <div className="form-section">
+            <h3 className="section-title">
+              <Calendar size={24} style={{ color: '#3b82f6' }} />
+              Preferred Tour Time *
+            </h3>
             
-            {/* Booking Form */}
-            <div style={{ 
-              background: 'white', 
-              borderRadius: '1.5rem', 
-              padding: '3rem', 
-              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-              border: '1px solid rgba(34, 197, 94, 0.1)'
-            }}>
-              <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '2rem' }}>
-                
-                {/* Personal Information */}
-                <div style={{ display: 'grid', gap: '1.5rem' }}>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700', 
-                    color: 'var(--text-dark)',
-                    marginBottom: '0.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}>
-                    <Phone size={24} style={{ color: 'var(--primary-green)' }} />
-                    Your Information
-                  </h3>
-                  
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-                    {/* Full Name */}
-                    <div>
-                      <label style={{ 
-                        display: 'block', 
-                        fontSize: '1rem', 
-                        fontWeight: '600', 
-                        color: 'var(--text-dark)', 
-                        marginBottom: '0.5rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem'
-                      }}>
-                        🏷️ Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="fullName"
-                        required
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        style={{
-                          width: '100%',
-                          padding: '1rem',
-                          border: '2px solid #e5e7eb',
-                          borderRadius: '0.75rem',
-                          fontSize: '1rem',
-                          transition: 'all 0.3s ease',
-                          outline: 'none'
-                        }}
-                        placeholder="Enter your full name"
-                        onFocus={(e) => e.target.style.borderColor = 'var(--primary-green)'}
-                        onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
-                      />
-                    </div>
-
-                    {/* Phone Number */}
-                    <div>
-                      <label style={{ 
-                        display: 'block', 
-                        fontSize: '1rem', 
-                        fontWeight: '600', 
-                        color: 'var(--text-dark)', 
-                        marginBottom: '0.5rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem'
-                      }}>
-                        📱 Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        style={{
-                          width: '100%',
-                          padding: '1rem',
-                          border: '2px solid #e5e7eb',
-                          borderRadius: '0.75rem',
-                          fontSize: '1rem',
-                          transition: 'all 0.3s ease',
-                          outline: 'none'
-                        }}
-                        placeholder="(555) 123-4567"
-                        onFocus={(e) => e.target.style.borderColor = 'var(--primary-green)'}
-                        onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label style={{ 
-                      display: 'block', 
-                      fontSize: '1rem', 
-                      fontWeight: '600', 
-                      color: 'var(--text-dark)', 
-                      marginBottom: '0.5rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem'
-                    }}>
-                      📧 Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      style={{
-                        width: '100%',
-                        padding: '1rem',
-                        border: '2px solid #e5e7eb',
-                        borderRadius: '0.75rem',
-                        fontSize: '1rem',
-                        transition: 'all 0.3s ease',
-                        outline: 'none'
-                      }}
-                      placeholder="your.email@example.com"
-                      onFocus={(e) => e.target.style.borderColor = 'var(--primary-green)'}
-                      onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
-                    />
-                  </div>
+            <div className="radio-options">
+              <label className={`radio-option ${formData.preferredTime === 'within-1-hour' ? 'selected' : ''}`}>
+                <input
+                  type="radio"
+                  name="preferredTime"
+                  value="within-1-hour"
+                  checked={formData.preferredTime === 'within-1-hour'}
+                  onChange={handleInputChange}
+                  className="radio-input"
+                />
+                <div className="radio-content">
+                  <Zap size={20} style={{ color: '#f59e0b' }} />
+                  <span>Within 1 hour</span>
                 </div>
+              </label>
 
-                {/* Tour Timing */}
-                <div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700', 
-                    color: 'var(--text-dark)',
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}>
-                    <Calendar size={24} style={{ color: 'var(--secondary-blue)' }} />
-                    Preferred Tour Time *
-                  </h3>
-                  
-                  <div style={{ display: 'grid', gap: '1rem' }}>
-                    {[
-                      { value: 'within-1-hour', label: 'Within 1 hour', icon: '⚡' },
-                      { value: 'schedule-specific', label: 'Schedule specific time', icon: '📅' }
-                    ].map((option) => (
-                      <label key={option.value} style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '1rem',
-                        padding: '1rem',
-                        border: '2px solid #e5e7eb',
-                        borderRadius: '0.75rem',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        backgroundColor: formData.preferredTime === option.value ? 'rgba(34, 197, 94, 0.1)' : 'white',
-                        borderColor: formData.preferredTime === option.value ? 'var(--primary-green)' : '#e5e7eb'
-                      }}>
-                        <input
-                          type="radio"
-                          name="preferredTime"
-                          value={option.value}
-                          checked={formData.preferredTime === option.value}
-                          onChange={handleInputChange}
-                          style={{ 
-                            width: '1.25rem', 
-                            height: '1.25rem',
-                            accentColor: 'var(--primary-green)'
-                          }}
-                        />
-                        <span style={{ fontSize: '1.2rem' }}>{option.icon}</span>
-                        <span style={{ fontSize: '1rem', fontWeight: '500' }}>{option.label}</span>
-                        {formData.preferredTime === option.value && (
-                          <CheckCircle size={20} style={{ color: 'var(--primary-green)', marginLeft: 'auto' }} />
-                        )}
-                      </label>
-                    ))}
-                  </div>
-
-                  {/* Date/Time Picker for Scheduled Tours */}
-                  {formData.preferredTime === 'schedule-specific' && (
-                    <div style={{ marginTop: '1rem', display: 'grid', gap: '1rem' }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                        <div>
-                          <label style={{ 
-                            display: 'block', 
-                            fontSize: '0.9rem', 
-                            fontWeight: '600', 
-                            color: 'var(--text-dark)', 
-                            marginBottom: '0.5rem'
-                          }}>
-                            📅 Preferred Date
-                          </label>
-                          <input
-                            type="date"
-                            name="scheduledDate"
-                            value={formData.scheduledDate}
-                            onChange={handleInputChange}
-                            min={new Date().toISOString().split('T')[0]}
-                            style={{
-                              width: '100%',
-                              padding: '0.75rem',
-                              border: '2px solid var(--primary-green)',
-                              borderRadius: '0.75rem',
-                              fontSize: '1rem',
-                              outline: 'none'
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <label style={{ 
-                            display: 'block', 
-                            fontSize: '0.9rem', 
-                            fontWeight: '600', 
-                            color: 'var(--text-dark)', 
-                            marginBottom: '0.5rem'
-                          }}>
-                            🕐 Preferred Time
-                          </label>
-                          <input
-                            type="time"
-                            name="scheduledTime"
-                            value={formData.scheduledTime}
-                            onChange={handleInputChange}
-                            style={{
-                              width: '100%',
-                              padding: '0.75rem',
-                              border: '2px solid var(--primary-green)',
-                              borderRadius: '0.75rem',
-                              fontSize: '1rem',
-                              outline: 'none'
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+              <label className={`radio-option ${formData.preferredTime === 'schedule-specific' ? 'selected' : ''}`}>
+                <input
+                  type="radio"
+                  name="preferredTime"
+                  value="schedule-specific"
+                  checked={formData.preferredTime === 'schedule-specific'}
+                  onChange={handleInputChange}
+                  className="radio-input"
+                />
+                <div className="radio-content">
+                  <Calendar size={20} style={{ color: '#3b82f6' }} />
+                  <span>Schedule specific time</span>
                 </div>
+              </label>
+            </div>
 
-                {/* Optional Questions */}
-                <div>
-                  <label style={{ 
-                    display: 'block', 
-                    fontSize: '1rem', 
-                    fontWeight: '600', 
-                    color: 'var(--text-dark)', 
-                    marginBottom: '0.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}>
-                    <MessageSquare size={20} style={{ color: 'var(--accent-purple)' }} />
-                    Any specific questions? (Optional)
+            {/* Date/Time Picker for Scheduled Tours */}
+            {formData.preferredTime === 'schedule-specific' && (
+              <div className="form-grid" style={{ marginTop: '1rem' }}>
+                <div className="form-field">
+                  <label className="form-label">
+                    📅 Preferred Date
                   </label>
-                  <textarea
-                    name="questions"
-                    rows="4"
-                    value={formData.questions}
+                  <input
+                    type="date"
+                    name="scheduledDate"
+                    value={formData.scheduledDate}
                     onChange={handleInputChange}
-                    style={{
-                      width: '100%',
-                      padding: '1rem',
-                      border: '2px solid #e5e7eb',
-                      borderRadius: '0.75rem',
-                      fontSize: '1rem',
-                      transition: 'all 0.3s ease',
-                      outline: 'none',
-                      resize: 'vertical'
-                    }}
-                    placeholder="Any questions about storage, pricing, or the facility?"
-                    onFocus={(e) => e.target.style.borderColor = 'var(--primary-green)'}
-                    onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+                    min={new Date().toISOString().split('T')[0]}
+                    className="form-input"
                   />
                 </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-primary"
-                  style={{
-                    width: '100%',
-                    padding: '1.25rem 2rem',
-                    fontSize: '1.2rem',
-                    fontWeight: '700',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    opacity: isSubmitting ? 0.7 : 1,
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer'
-                  }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div style={{
-                        width: '1.25rem',
-                        height: '1.25rem',
-                        border: '2px solid transparent',
-                        borderTop: '2px solid white',
-                        borderRadius: '50%',
-                        animation: 'spin 1s linear infinite'
-                      }} />
-                      Booking Your Tour...
-                    </>
-                  ) : (
-                    <>
-                      🔍 Book My Tour
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
-
-            {/* What Happens Next */}
-            <div style={{ 
-              background: 'linear-gradient(135deg, var(--primary-green), #16a34a)', 
-              color: 'white', 
-              padding: '2.5rem', 
-              borderRadius: '1.5rem', 
-              boxShadow: '0 20px 25px -5px rgba(34, 197, 94, 0.3)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: '700', 
-                marginBottom: '1.5rem',
-                textAlign: 'center'
-              }}>
-                What happens next?
-              </h3>
-              <div style={{ display: 'grid', gap: '1rem' }}>
-                {[
-                  { icon: '✅', text: 'Instant confirmation sent to your email' },
-                  { icon: '✅', text: "We'll text you exact container location (with photo), container number, and lock combination within 30 minutes" },
-                  { icon: '✅', text: 'Self-guided tour at your convenience' },
-                  { icon: '✅', text: 'Rent on-site if you love it!' }
-                ].map((item, index) => (
-                  <div key={index} style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '1rem',
-                    fontSize: '1.1rem',
-                    fontWeight: '500'
-                  }}>
-                    <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
-                    <span>{item.text}</span>
-                  </div>
-                ))}
+                <div className="form-field">
+                  <label className="form-label">
+                    🕐 Preferred Time
+                  </label>
+                  <input
+                    type="time"
+                    name="scheduledTime"
+                    value={formData.scheduledTime}
+                    onChange={handleInputChange}
+                    className="form-input"
+                  />
+                </div>
               </div>
+            )}
+          </div>
+
+          {/* Optional Questions */}
+          <div className="form-section">
+            <label className="form-label">
+              <MessageSquare size={20} style={{ color: '#8b5cf6' }} />
+              Any specific questions? (Optional)
+            </label>
+            <textarea
+              name="questions"
+              value={formData.questions}
+              onChange={handleInputChange}
+              className="form-textarea"
+              placeholder="Any questions about storage, pricing, or the facility?"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="submit-btn"
+          >
+            {isSubmitting ? (
+              <>
+                <div style={{
+                  width: '1.25rem',
+                  height: '1.25rem',
+                  border: '2px solid transparent',
+                  borderTop: '2px solid white',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }} />
+                Booking Your Tour...
+              </>
+            ) : (
+              <>
+                <Home size={20} />
+                Book My Tour
+              </>
+            )}
+          </button>
+        </form>
+      </div>
+
+      {/* Enhanced What Happens Next Timeline */}
+      <HorizontalTimeline />
+
+      {/* Process Comparison Flowchart */}
+      <ProcessFlowchart />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Rental Process Information */}
+      <div className="bg-white rounded-lg shadow-md p-8 my-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">
+          After your tour, if you decide to rent:
+        </h2>
+        
+        <div className="grid md:grid-cols-4 gap-4 mb-6">
+          <div className="text-center">
+            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">📝</span>
             </div>
+            <h3 className="font-semibold text-gray-700 mb-1">Electronic Lease</h3>
+            <p className="text-sm text-gray-600">Simple DocuSign lease</p>
+            <p className="text-xs text-green-600 mt-1">~3 minutes</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">💳</span>
+            </div>
+            <h3 className="font-semibold text-gray-700 mb-1">Payment Setup</h3>
+            <p className="text-sm text-gray-600">Secure Rent Manager portal</p>
+            <p className="text-xs text-blue-600 mt-1">~5 minutes</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">🔑</span>
+            </div>
+            <h3 className="font-semibold text-gray-700 mb-1">Access Code</h3>
+            <p className="text-sm text-gray-600">Becomes permanent</p>
+            <p className="text-xs text-purple-600 mt-1">Instant</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">✅</span>
+            </div>
+            <h3 className="font-semibold text-gray-700 mb-1">Complete</h3>
+            <p className="text-sm text-gray-600">No paperwork, no office visits</p>
+            <p className="text-xs text-green-600 mt-1">Done!</p>
           </div>
         </div>
-      </section>
+        
+        <div className="text-center">
+          <button 
+            onClick={() => {
+              navigate('/rental-setup');
+              setTimeout(() => window.scrollTo(0, 0), 100);
+            }}
+            className="inline-flex items-center text-green-600 hover:text-green-700 font-medium bg-transparent border-none cursor-pointer text-lg"
+          >
+            Learn more about our payment setup process →
+          </button>
+        </div>
+      </div>
 
       <style jsx>{`
         @keyframes spin {
@@ -570,3 +370,4 @@ Take your time exploring!`
 };
 
 export default BookTourPage;
+
