@@ -11,10 +11,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  preview: {
+    host: '0.0.0.0',
+    port: 3000,
+    strictPort: true
+  },
   server: {
     host: '0.0.0.0',
-    port: 5173,
-    allowedHosts: 'all'
+    port: 3000
   }
 })
-
