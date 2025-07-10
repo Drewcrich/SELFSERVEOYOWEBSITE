@@ -1,97 +1,124 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Building2, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-gray-800 text-white py-8 mt-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
           {/* Company Info */}
-          <div className="col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-bold">Own Your Own Storage</span>
+          <div>
+            <div className="flex items-center mb-4">
+              <Building2 size={28} className="text-green-500 mr-2" />
+              <span className="text-xl font-bold">OwnYourOwnStorage</span>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              Premier self storage in Urbana, IL featuring spacious 40ft shipping containers with 24/7 access.
+            <p className="text-gray-300 mb-4">
+              Affordable self-service storage containers in Urbana, IL. 
+              Perfect for students, businesses, and moving solutions.
             </p>
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
-              <Clock className="w-4 h-4" />
-              <span>24/7 Access Available</span>
+            <div className="space-y-2">
+              <div className="flex items-center text-gray-300">
+                <MapPin size={16} className="mr-2 text-green-500" />
+                <span>1502 Airport Road, Urbana, IL 61802</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <Mail size={16} className="mr-2 text-green-500" />
+                <span>drewcrichardson1999@gmail.com</span>
+              </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/" className="text-gray-300 hover:text-green-500 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/book-tour" className="text-gray-400 hover:text-white transition-colors">
-                  Book Tour
+                <Link to="/about" className="text-gray-300 hover:text-green-500 transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link to="/units" className="text-gray-400 hover:text-white transition-colors">
-                  Storage Units
+                <Link to="/pricing" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link to="/book-tour" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Book Tour
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Legal Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>40ft Container Storage</li>
-              <li>Self-Service Rental</li>
-              <li>24/7 Access</li>
-              <li>Secure Storage</li>
-              <li>Online Payments</li>
-              <li>Digital Lease Signing</li>
+            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/privacy-policy" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-of-service" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/accessibility" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Accessibility
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookie-policy" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="text-gray-300 hover:text-green-500 transition-colors">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400">
-                  1502 Airport Road<br />
-                  Urbana, IL 61802
-                </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span className="text-gray-400">Drewcrichardson1999@gmail.com</span>
-              </div>
+            
+            <div className="mt-6">
+              <h4 className="text-md font-semibold mb-2">Business Hours</h4>
+              <p className="text-gray-300 text-sm">
+                <strong>Container Access:</strong> 24/7<br />
+                <strong>Support:</strong> Mon-Fri 9AM-6PM
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © 2025 Own Your Own Storage. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 OwnYourOwnStorage. All rights reserved.
+            </p>
+            <div className="flex space-x-4 text-sm flex-wrap">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-green-500 transition-colors">
+                Privacy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
-                Terms of Service
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-green-500 transition-colors">
+                Terms
               </Link>
-              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
-                Contact
+              <Link to="/accessibility" className="text-gray-400 hover:text-green-500 transition-colors">
+                Accessibility
+              </Link>
+              <Link to="/cookie-policy" className="text-gray-400 hover:text-green-500 transition-colors">
+                Cookies
+              </Link>
+              <Link to="/refund-policy" className="text-gray-400 hover:text-green-500 transition-colors">
+                Refunds
               </Link>
             </div>
           </div>
