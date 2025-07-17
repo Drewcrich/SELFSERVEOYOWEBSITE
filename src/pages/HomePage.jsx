@@ -75,6 +75,11 @@ const HomePage = () => {
             <h1 className="text-6xl font-bold text-gray-800 mb-6">
               Storage Units Near University of Illinois
             </h1>
+            <div className="bg-green-100 border-2 border-green-300 rounded-lg py-3 px-6 inline-block mb-6">
+              <p className="text-2xl font-bold text-green-800">
+                Starting at $75/month - No Credit Check Option Available
+              </p>
+            </div>
             <p className="text-2xl text-gray-600 mb-4">
               Student Storage, Business Inventory & Moving Solutions in Urbana, IL
             </p>
