@@ -33,6 +33,7 @@ function App() {
             <Route path="/ads" element={<GoogleAdsLandingPage />} />
             <Route path="/pricing" element={<PricingPageIndustrial />} />
             <Route path="/book-tour" element={<BookTourPageIndustrialJotForm />} />
+            <Route path="/booking-confirmed" element={<BookingConfirmedPage />} />
             <Route path="/about" element={<AboutUsPageIndustrial />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPageIndustrial />} />
           <Route path="/terms-of-service" element={<TermsOfServicePageIndustrial />} />
