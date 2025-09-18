@@ -56,7 +56,7 @@ const AccessibilityPageIndustrial = () => {
             <div className="bg-green-900 border-4 border-green-600 p-8 shadow-xl">
               <h3 className="text-2xl font-black text-green-400 mb-6 uppercase text-center">♿ Accessible Container Storage for All</h3>
               <p className="text-gray-300 text-lg font-bold mb-6">
-                OwnYourOwnStorage is committed to ensuring digital accessibility for people with disabilities. 
+                RentYourOwnStorage is committed to ensuring digital accessibility for people with disabilities. 
                 We are continually improving the user experience for everyone and applying the relevant 
                 accessibility standards to ensure we provide equal access to all of our users.
               </p>
@@ -283,7 +283,7 @@ const AccessibilityPageIndustrial = () => {
                   <li className="flex items-start">
                     <span className="text-green-400 mr-4 text-2xl">📧</span>
                     <div>
-                      <strong className="text-white">Email:</strong> drewcrichardson1999@gmail.com
+                      <strong className="text-white">Text or Call:</strong> 3055092759
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -344,8 +344,8 @@ const AccessibilityPageIndustrial = () => {
                 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
-                    <Mail size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <Phone size={24} className="mr-4 text-orange-400" />
+                    <span>Text or Call: 3055092759</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <MapPin size={24} className="mr-4 text-orange-400" />

@@ -220,7 +220,7 @@ const AboutUsPageIndustrial = () => {
                   <h3 className="text-2xl font-black text-orange-400 uppercase">Contact</h3>
                 </div>
                 <p className="text-gray-300 text-lg font-bold mb-4">
-                  <strong className="text-white">Email:</strong> drewcrichardson1999@gmail.com
+                  <strong className="text-white">Email:</strong> 3055092759
                 </p>
                 <p className="text-gray-300 text-lg font-bold mb-6">
                   <strong className="text-white">Hours:</strong> 24/7 container access<br />

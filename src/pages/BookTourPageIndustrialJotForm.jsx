@@ -111,7 +111,7 @@ const BookTourPageIndustrialJotForm = () => {
               }}
               allowTransparency="true"
               allow="geolocation; microphone; camera; fullscreen"
-              src="https://form.jotform.com/251895754464067?redirect=https://ownyourownselfserve.com/booking-confirmed"
+              src="https://form.jotform.com/251895754464067?redirect=https://8080-i8rv3yhtvk3x8fwr04iix-3e0318a4.manusvm.computer/booking-confirmed"
               frameBorder="0"
               style={{
                 width: '100%',

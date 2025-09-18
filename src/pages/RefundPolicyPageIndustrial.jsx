@@ -57,7 +57,7 @@ const RefundPolicyPageIndustrial = () => {
               <h3 className="text-2xl font-black text-blue-400 mb-6 uppercase text-center">💰 Fair & Transparent Refund Policy</h3>
               <p className="text-gray-300 text-lg font-bold mb-6">
                 This Refund & Cancellation Policy explains our procedures for security deposit returns, 
-                lease cancellations, early termination, and refund processing for OwnYourOwnStorage container rental services.
+                lease cancellations, early termination, and refund processing for RentYourOwnStorage container rental services.
               </p>
               <p className="text-gray-300 text-lg font-bold">
                 As a local family business, we believe in fair treatment and transparent policies. 
@@ -160,7 +160,7 @@ const RefundPolicyPageIndustrial = () => {
                   <li className="flex items-start">
                     <span className="text-blue-400 mr-4 text-2xl">📧</span>
                     <div>
-                      <strong className="text-white">Written Notice:</strong> Email 30-day notice to drewcrichardson1999@gmail.com
+                      <strong className="text-white">Written Notice:</strong> Email 30-day notice to 3055092759
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -439,7 +439,7 @@ const RefundPolicyPageIndustrial = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <Mail size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <span>3055092759</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <MapPin size={24} className="mr-4 text-orange-400" />

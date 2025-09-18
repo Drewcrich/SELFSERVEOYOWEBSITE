@@ -97,13 +97,13 @@ const BookingConfirmedPage = () => {
                     <div className="flex items-center space-x-4 mb-4">
                       <Phone size={24} className="text-orange-400" />
                       <div>
-                        <h3 className="text-xl font-black text-orange-400">EMAIL US</h3>
-                        <a href="mailto:drewcrichardson1999@gmail.com" className="text-xl font-black text-white hover:text-yellow-400 transition-colors">
-                          drewcrichardson1999@gmail.com
+                        <h3 className="text-xl font-black text-orange-400">TEXT OR CALL</h3>
+                        <a href="tel:3055092759" className="text-xl font-black text-white hover:text-yellow-400 transition-colors">
+                          3055092759
                         </a>
                       </div>
                     </div>
-                    <p className="text-gray-300 font-bold">Questions? Email anytime!</p>
+                    <p className="text-gray-300 font-bold">Questions? Text or Call anytime!</p>
                   </div>
                   
                   <div className="bg-gray-900 border-2 border-gray-700 p-6">

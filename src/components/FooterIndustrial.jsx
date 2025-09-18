@@ -33,7 +33,7 @@ const FooterIndustrial = () => {
               <div className="bg-orange-600 p-3 border-4 border-yellow-400 shadow-xl mr-4">
                 <Building2 size={32} className="text-white" />
               </div>
-              <span className="text-2xl font-black uppercase tracking-wider">OwnYourOwnStorage</span>
+              <span className="text-2xl font-black uppercase tracking-wider">RentYourOwnStorage</span>
             </div>
             <p className="text-gray-300 mb-6 text-lg leading-relaxed">
               <span className="text-yellow-400 font-bold uppercase">Heavy-Duty Steel Container Storage</span> in Urbana, IL. 
@@ -46,7 +46,7 @@ const FooterIndustrial = () => {
               </div>
               <div className="flex items-center text-gray-300 bg-gray-800 border-2 border-gray-600 p-3">
                 <Mail size={20} className="mr-3 text-orange-500" />
-                <span className="font-bold">drewcrichardson1999@gmail.com</span>
+                <span className="font-bold">Text or Call: 3055092759</span>
               </div>
             </div>
           </div>
@@ -62,11 +62,7 @@ const FooterIndustrial = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-yellow-400 transition-colors text-lg font-bold uppercase tracking-wide border-b-2 border-transparent hover:border-yellow-400 pb-1">
-                  About Us
-                </Link>
-              </li>
+
               <li>
                 <Link to="/pricing" className="text-gray-300 hover:text-yellow-400 transition-colors text-lg font-bold uppercase tracking-wide border-b-2 border-transparent hover:border-yellow-400 pb-1">
                   Pricing
@@ -128,7 +124,7 @@ const FooterIndustrial = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="bg-gray-800 border-2 border-gray-600 px-6 py-3 mb-4 md:mb-0">
               <p className="text-gray-300 font-bold uppercase tracking-wide">
-                © 2025 OwnYourOwnStorage. All rights reserved.
+                © 2025 RentYourOwnStorage. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6 text-sm flex-wrap">

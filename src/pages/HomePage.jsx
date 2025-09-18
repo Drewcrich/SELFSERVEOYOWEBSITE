@@ -34,11 +34,7 @@ const HomePage = () => {
       alt: 'Container Access',
       caption: 'Easy container access and loading'
     },
-    {
-      src: '/Screenshot2025-06-17101424.png',
-      alt: 'Storage Container',
-      caption: 'Professional storage containers'
-    },
+
     {
       src: '/Screenshot2025-06-17100319.png',
       alt: 'Container Exterior',
@@ -217,31 +213,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Industrial Stats Section */}
-      <div className="py-16 bg-gradient-to-r from-gray-900 to-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-orange-600 text-white px-6 py-2 mb-4">
-              <h2 className="text-2xl font-black tracking-wider">TRUSTED BY OUR COMMUNITY</h2>
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-            <div className="bg-gray-800 border-4 border-yellow-400 p-8">
-              <div className="text-5xl font-black text-yellow-400 mb-2">5000+</div>
-              <h4 className="text-xl font-bold text-white">SATISFIED CUSTOMERS</h4>
-            </div>
-            <div className="bg-gray-800 border-4 border-orange-400 p-8">
-              <div className="text-5xl font-black text-orange-400 mb-2">30+</div>
-              <h4 className="text-xl font-bold text-white">YEARS IN BUSINESS</h4>
-            </div>
-            <div className="bg-gray-800 border-4 border-red-400 p-8">
-              <div className="text-5xl font-black text-red-400 mb-2">24/7</div>
-              <h4 className="text-xl font-bold text-white">ACCESS AVAILABLE</h4>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Industrial Services Section */}
       <div className="py-20 bg-gray-800">
@@ -303,18 +275,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Customer Reviews with Industrial Theme */}
-      <div className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-yellow-500 text-black px-6 py-2 mb-4">
-              <h2 className="text-2xl font-black tracking-wider">WHAT OUR CUSTOMERS SAY</h2>
-            </div>
-            <p className="text-xl text-gray-300">Real stories from real customers who chose the smarter way to store</p>
-          </div>
-          <CustomerReviews />
-        </div>
-      </div>
+
 
       {/* Industrial Pricing Section */}
       <div id="pricing" className="py-20 bg-gradient-to-br from-gray-800 to-black">
@@ -465,7 +426,7 @@ const HomePage = () => {
               <h2 className="text-2xl font-black tracking-wider">VISIT US</h2>
             </div>
             <p className="text-2xl text-yellow-400 font-bold">1502 Airport Road, Urbana IL 61802</p>
-            <p className="text-xl text-gray-300 mt-2">Email: Drewcrichardson1999@gmail.com</p>
+            <p className="text-xl text-gray-300 mt-2">Text or Call: 3055092759</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">

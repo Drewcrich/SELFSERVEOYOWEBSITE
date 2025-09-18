@@ -56,12 +56,12 @@ const TermsOfServicePageIndustrial = () => {
             <div className="bg-red-900 border-4 border-red-600 p-8 shadow-xl">
               <h3 className="text-2xl font-black text-red-400 mb-6 uppercase text-center">⚠️ Legal Agreement ⚠️</h3>
               <p className="text-gray-300 text-lg font-bold mb-6">
-                By accessing our website, booking a container tour, or renting a storage container from OwnYourOwnStorage, 
+                By accessing our website, booking a container tour, or renting a storage container from RentYourOwnStorage, 
                 you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree 
                 to these terms, please do not use our services.
               </p>
               <p className="text-gray-300 text-lg font-bold">
-                These terms constitute a legally binding agreement between you and OwnYourOwnStorage, 
+                These terms constitute a legally binding agreement between you and RentYourOwnStorage, 
                 a family business located at 1502 Airport Road, Urbana, IL 61802.
               </p>
             </div>
@@ -406,7 +406,7 @@ const TermsOfServicePageIndustrial = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <FileText size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <span>3055092759</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <Shield size={24} className="mr-4 text-orange-400" />

@@ -17,9 +17,10 @@ import TermsOfServicePageIndustrial from './pages/TermsOfServicePageIndustrial';
 import AccessibilityPageIndustrial from './pages/AccessibilityPageIndustrial';
 import CookiePolicyPageIndustrial from './pages/CookiePolicyPageIndustrial';
 import RefundPolicyPageIndustrial from './pages/RefundPolicyPageIndustrial';
-import AboutUsPageIndustrial from './pages/AboutUsPageIndustrial';
+
 import BookingConfirmedPage from './pages/BookingConfirmedPage';
 import GoogleAdsLandingPage from './pages/GoogleAdsLandingPage';
+import ContactUsPage from './pages/ContactUsPage';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
             <Route path="/pricing" element={<PricingPageIndustrial />} />
             <Route path="/book-tour" element={<BookTourPageIndustrialJotForm />} />
             <Route path="/booking-confirmed" element={<BookingConfirmedPage />} />
-            <Route path="/about" element={<AboutUsPageIndustrial />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+
           <Route path="/privacy-policy" element={<PrivacyPolicyPageIndustrial />} />
           <Route path="/terms-of-service" element={<TermsOfServicePageIndustrial />} />
             <Route path="/accessibility" element={<AccessibilityPageIndustrial />} />

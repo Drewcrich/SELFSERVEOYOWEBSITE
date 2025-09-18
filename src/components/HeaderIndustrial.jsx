@@ -31,7 +31,7 @@ const HeaderIndustrial = () => {
               <Building2 size={32} className="text-white" />
             </div>
             <span className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider">
-              OwnYourOwnStorage
+              RentYourOwnStorage
             </span>
           </Link>
           
@@ -43,17 +43,18 @@ const HeaderIndustrial = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/about" 
-              className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-400"
-            >
-              About
-            </Link>
+
             <Link 
               to="/pricing" 
               className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-400"
             >
               Pricing
+            </Link>
+            <Link 
+              to="/contact-us" 
+              className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 border-b-2 border-transparent hover:border-yellow-400"
+            >
+              Contact Us
             </Link>
             <Link 
               to="/book-tour" 
@@ -99,19 +100,20 @@ const HeaderIndustrial = () => {
               >
                 Home
               </Link>
-              <Link 
-                to="/about" 
-                className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 py-4 border-b-2 border-gray-700"
-                onClick={closeMenu}
-              >
-                About
-              </Link>
+
               <Link 
                 to="/pricing" 
                 className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 py-4 border-b-2 border-gray-700"
                 onClick={closeMenu}
               >
                 Pricing
+              </Link>
+              <Link 
+                to="/contact-us" 
+                className="text-lg text-gray-300 hover:text-yellow-400 font-bold uppercase tracking-wide transition-colors duration-200 py-4 border-b-2 border-gray-700"
+                onClick={closeMenu}
+              >
+                Contact Us
               </Link>
               <Link 
                 to="/book-tour" 

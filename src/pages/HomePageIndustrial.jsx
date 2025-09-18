@@ -44,11 +44,7 @@ const HomePageIndustrial = () => {
       alt: 'Container Interior Access',
       caption: 'Spacious interior with ground-level access'
     },
-    {
-      src: '/Screenshot2025-06-17101424.png',
-      alt: 'Storage Container',
-      caption: 'Professional storage containers'
-    },
+
     {
       src: '/Screenshot2025-06-17100306.png',
       alt: 'Container Setup',
@@ -235,40 +231,7 @@ const HomePageIndustrial = () => {
         </div>
       </div>
 
-      {/* Industrial Stats Section */}
-      <div className="py-20 bg-gradient-to-r from-gray-900 to-black relative">
-        {/* Metal Texture Background */}
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url('/industrial_metal_texture.png')`,
-            backgroundSize: 'cover'
-          }}
-        />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-orange-600 text-white px-8 py-3 mb-6 border-4 border-yellow-400 shadow-xl">
-              <h2 className="text-3xl font-black tracking-wider uppercase">Trusted by Our Community</h2>
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
-            <div className="bg-gray-800 border-4 border-yellow-400 p-10 shadow-2xl">
-              <div className="text-6xl font-black text-yellow-400 mb-4">5000+</div>
-              <h4 className="text-2xl font-black text-white uppercase">Satisfied Customers</h4>
-            </div>
-            <div className="bg-gray-800 border-4 border-orange-400 p-10 shadow-2xl">
-              <div className="text-6xl font-black text-orange-400 mb-4">30+</div>
-              <h4 className="text-2xl font-black text-white uppercase">Years in Business</h4>
-            </div>
-            <div className="bg-gray-800 border-4 border-red-400 p-10 shadow-2xl">
-              <div className="text-6xl font-black text-red-400 mb-4">24/7</div>
-              <h4 className="text-2xl font-black text-white uppercase">Access Available</h4>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Industrial Services Section */}
       <div className="py-20 bg-gray-800 relative">
@@ -351,16 +314,6 @@ const HomePageIndustrial = () => {
             backgroundRepeat: 'repeat'
           }}
         />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-yellow-500 text-black px-8 py-3 mb-6 border-4 border-black shadow-xl">
-              <h2 className="text-3xl font-black tracking-wider uppercase">What Our Customers Say</h2>
-            </div>
-            <p className="text-2xl text-gray-300 uppercase tracking-wide">Real stories from real customers who chose the smarter way to store</p>
-          </div>
-          <CustomerReviewsIndustrial />
-        </div>
       </div>
 
       {/* Industrial Pricing Section */}
@@ -540,7 +493,7 @@ const HomePageIndustrial = () => {
               <h2 className="text-3xl font-black tracking-wider uppercase">Visit Us</h2>
             </div>
             <p className="text-3xl text-yellow-400 font-black uppercase">1502 Airport Road, Urbana IL 61802</p>
-            <p className="text-2xl text-gray-300 mt-4">Email: Drewcrichardson1999@gmail.com</p>
+            <p className="text-2xl text-gray-300 mt-4">Text or Call: 3055092759</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">

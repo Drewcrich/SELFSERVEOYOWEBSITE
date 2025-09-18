@@ -357,7 +357,7 @@ const CookiePolicyPageIndustrial = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <Cookie size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <span>3055092759</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <Shield size={24} className="mr-4 text-orange-400" />

@@ -54,7 +54,7 @@ const PrivacyPolicyPageIndustrial = () => {
             </div>
             
             <div className="bg-gray-900 border-4 border-gray-700 p-8 shadow-xl">
-              <p className="text-2xl font-black text-orange-400 mb-6 uppercase">OwnYourOwnStorage - Container Storage Facility</p>
+              <p className="text-2xl font-black text-orange-400 mb-6 uppercase">RentYourOwnStorage - Container Storage Facility</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-center text-gray-300 text-lg font-bold">
                   <MapPin size={24} className="mr-4 text-orange-400" />
@@ -62,7 +62,7 @@ const PrivacyPolicyPageIndustrial = () => {
                 </div>
                 <div className="flex items-center text-gray-300 text-lg font-bold">
                   <Mail size={24} className="mr-4 text-orange-400" />
-                  <span>drewcrichardson1999@gmail.com</span>
+                  <span>3055092759</span>
                 </div>
               </div>
             </div>
@@ -298,7 +298,7 @@ const PrivacyPolicyPageIndustrial = () => {
                 <div className="space-y-4">
                   <div className="flex items-center text-gray-300 text-lg font-bold">
                     <Mail size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <span>3055092759</span>
                   </div>
                   <p className="text-gray-300 text-lg font-bold">
                     We will respond to your request within 30 days.
@@ -323,7 +323,7 @@ const PrivacyPolicyPageIndustrial = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <Mail size={24} className="mr-4 text-orange-400" />
-                    <span>drewcrichardson1999@gmail.com</span>
+                    <span>3055092759</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-300 text-lg font-bold">
                     <MapPin size={24} className="mr-4 text-orange-400" />
