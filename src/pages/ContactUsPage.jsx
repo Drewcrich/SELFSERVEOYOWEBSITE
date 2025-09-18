@@ -40,7 +40,7 @@ const ContactUsPage = () => {
             </p>
             <div className="text-center">
               <a 
-                href="https://form.jotform.com/251895754464067?redirect=https://8080-i8rv3yhtvk3x8fwr04iix-3e0318a4.manusvm.computer/booking-confirmed" 
+                href="https://rentyourownstorage.com/book-tour" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-xl transition-colors duration-200 shadow-lg"
